@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../style";
 import Card from "./Cards/Card";
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
 
 const Search = () => {
   const apiKey = process.env.REACT_APP_API_KEY
@@ -46,7 +47,7 @@ const Search = () => {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-4 justify-center my-4 mx-auto">
             {Movies.map((movie) => {
-              return <Card movie={movie} />;
+              return <Card movie={movie} /> || <Skeleton/>;
             })}
           </div>
         )}

@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
 import styles from "../../style";
 import TvGeneralCard from "../Cards/TvGeneralCard";
+import Skeleton from "react-loading-skeleton";
 
 const General = (props) => {
   const apiKey = process.env.REACT_APP_API_KEY
@@ -64,7 +65,7 @@ const General = (props) => {
         {tvDetail.map((tv) => {
           return (
             <SplideSlide>
-              <TvGeneralCard detail={tv} key={tv.id}/>
+              <TvGeneralCard detail={tv} key={tv.id}/> || <Skeleton/>
             </SplideSlide>
           );
         })}

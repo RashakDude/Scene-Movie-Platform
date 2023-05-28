@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import styles from '../../style'
 import MovieCard from '../Cards/MovieCard'
 import { Oval } from 'react-loader-spinner'
+import Skeleton from 'react-loading-skeleton'
 
 const Similiar = (props) => {
   const apiKey = process.env.REACT_APP_API_KEY
@@ -83,7 +84,7 @@ const Similiar = (props) => {
             {data.map((item) => {
               return (
                 <SplideSlide>
-                  <MovieCard movie={item} key={item.id} />
+                  <MovieCard movie={item} key={item.id} /> || <Skeleton/>
                 </SplideSlide>
               )
             })}

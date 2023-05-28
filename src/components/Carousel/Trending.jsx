@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { Oval } from 'react-loader-spinner'
 import styles from '../../style'
 import MovieCard from '../Cards/MovieCard'
+import Skeleton from 'react-loading-skeleton'
 
 const Trending = (props) => {
   const apiKey = process.env.REACT_APP_API_KEY
@@ -81,7 +82,7 @@ const Trending = (props) => {
             {Movies.map((movie) => {
               return (
                 <SplideSlide>
-                  <MovieCard movie={movie} key={movie.id} />
+                  <MovieCard movie={movie} key={movie.id} /> || <Skeleton/>
                 </SplideSlide>
               )
             })}

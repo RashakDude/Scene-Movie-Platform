@@ -5,6 +5,7 @@ import Pagination from './Pagination'
 import Card from './Cards/Card'
 import styles from '../style'
 import { useParams } from 'react-router-dom'
+import Skeleton from 'react-loading-skeleton'
 
 function Movies(props) {
   const apiKey = process.env.REACT_APP_API_KEY
@@ -65,7 +66,7 @@ function Movies(props) {
                 {' '}
                 <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 sm:justify-between justify-center flex-wrap my-4 mx-auto'>
                   {Movies.map((movie) => {
-                    return <Card movie={movie} />
+                    return <Card movie={movie} /> || <Skeleton/>
                   })}
                 </div>
                 <Pagination page={page} goBack={goBack} goNext={goNext} />
